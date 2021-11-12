@@ -17,8 +17,8 @@ def start(update, context):
     대화방이 처음 열리면, 자동으로 호출되는 함수.
     """
     context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text="안녕. 나는 allieusbot이야. 만나서 반가워.")
+        chat_id=update.effective_chat.id, text="안녕. 나는 allieusbot이야. 만나서 반가워."
+    )
 
 
 def echo(update, context):
@@ -40,9 +40,7 @@ def echo(update, context):
     else:
         response_text = "지원하지 않는 명령입니다."
 
-    context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text=response_text)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=response_text)
 
 
 start_handler = CommandHandler("start", start)

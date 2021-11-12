@@ -14,9 +14,7 @@ def make_response(received_text: str) -> str:
     # for post in post_list:
     #     response_text += post["title"] + "\n"
 
-    response_text = "\n".join([
-        post["title"]
-        for post in post_list])
+    response_text = "\n".join([post["title"] for post in post_list])
 
     return response_text
 
@@ -30,6 +28,4 @@ def naver_search(query):
     }
     res = requests.get(naver_search_url, params=params)
     soup = BeautifulSoup(res.text, "html.parser")
-    return [
-        {"title": tag.text}
-        for tag in soup.select(".lst_total .total_tit")]
+    return [{"title": tag.text} for tag in soup.select(".lst_total .total_tit")]
