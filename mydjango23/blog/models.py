@@ -24,23 +24,23 @@ class Post(TimestampedModel):
     title = models.CharField(max_length=200, db_index=True)
     content = models.TextField()
     photo = models.ImageField(upload_to="blog/post/%Y/%m/%d")
-    tag_set = models.ManyToManyField('Tag', blank=True)
+    tag_set = models.ManyToManyField("Tag", blank=True)
     status = models.CharField(
         max_length=1,
         # FIXME: 장고 3에서 추가된 TextChoices 기능을 활용
         choices=[
-            ('D', '초안'),  # Draft // DB저장값, Label
-            ('P', '공개'),  # Published
+            ("D", "초안"),  # Draft // DB저장값, Label
+            ("P", "공개"),  # Published
         ],
         db_index=True,
-        default='D',
+        default="D",
     )
 
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ['-id']
+        ordering = ["-id"]
 
 
 class Comment(TimestampedModel):
@@ -51,7 +51,7 @@ class Comment(TimestampedModel):
         return self.message
 
     class Meta:
-        ordering = ['-id']
+        ordering = ["-id"]
 
 
 class Tag(TimestampedModel):
