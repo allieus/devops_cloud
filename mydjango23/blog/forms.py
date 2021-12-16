@@ -36,6 +36,16 @@ class PostForm(forms.ModelForm):
         self.instance.tag_set.clear()
         self.instance.tag_set.add(*tag_list)
 
+    def clean_content(self):
+        """
+        입력 데이터에서 script 태그를 모두 제거합니다.
+        """
+        content = self.cleaned_data.get("content")
+        if content:
+            # script 태그를 제거
+            content = re.sub(r"<script.*?>.*?</script>", "", content, flags=re.I | re.S)
+        return content
+
     class Meta:
         model = Post
         fields = [
