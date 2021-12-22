@@ -5,12 +5,48 @@ const { melon_data: song_array } = require("./melon_data");
 // Array의 filter와 map 활용
 // 출력포맷 : [곡명1, 곡명2, 곡명3]
 
+// const bts_title_array = song_array
+//     .filter(({ artist }) => artist === "방탄소년단")
+//     .map(({ title }) => title);
 
-const bts_title_array = song_array
-    .filter(({ artist }) => artist === "방탄소년단")
-    .map(({ title }) => title);
+
+const numbers = [1, 2, 3, 4, 5];
+
+// const new_numbers = numbers.map(number => number * number);
+// console.log(new_numbers);
+
+// const new_numbers = numbers.reduce((acc, number) => {
+//     acc.push(number * number);
+//     return acc;
+// }, []);
+// console.log(new_numbers);
+
+const new_numbers_object = numbers.reduce((acc, number) => {
+    acc[number] = number * number;
+    return acc;
+}, {});
+console.log(new_numbers_object);
+
+// const result_sum = numbers.reduce((acc, number) => {
+//     acc += number;
+//     return acc;
+// }, 0);
+
+// console.log(`합 : ${result_sum}`);
 
 
-for (const title of bts_title_array) {
-    console.log(title);
-}
+
+
+
+
+
+
+
+// const bts_title_array = song_array
+//     .filter(({ artist }) => artist === "방탄소년단")
+//     .map(({ title }) => title);
+
+
+// for (const title of bts_title_array) {
+//     console.log(title);
+// }
