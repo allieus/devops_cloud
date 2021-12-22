@@ -15,10 +15,10 @@ const artist_count_object = song_array
         // if (!acc[artist]) acc[artist] = 0;
 
         // node 14
-        acc[artist] = acc[artist] || 0;
+        // acc[artist] = acc[artist] || 0;
 
         // node 16
-        // acc[artist] ||= 0;
+        acc[artist] ||= 0;
 
         // i = i || 1
         // i ||= 1
@@ -26,7 +26,11 @@ const artist_count_object = song_array
         return acc;
     }, {});
 
-console.log(artist_count_object);
+Object.values(artist_count_object)
+    .filter(number => number >= 2)
+    .length;
+
+
 
 // python version
 //
