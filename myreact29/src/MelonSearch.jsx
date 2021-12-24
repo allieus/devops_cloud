@@ -1,4 +1,4 @@
-import { Input } from 'antd';
+import { Avatar, Input, List, Typography, notification } from 'antd';
 import { useState } from 'react';
 
 import Axios from 'axios';
@@ -36,7 +36,7 @@ function MelonSearch() {
       .then((response) => {
         // ALBUMCONTENTS, ARTISTCONTENTS
         const {
-          data: { SONGCONTENTS: searchedSongList },
+          data: { SONGCONTENTS: searchedSongList = [] },
         } = response;
 
         console.group('멜론 검색결과');
@@ -45,11 +45,23 @@ function MelonSearch() {
         console.groupEnd();
 
         setSongList(searchedSongList);
+
+        const type = 'info';
+        notification[type]({
+          message: '멜론 검색',
+          description: `${searchedSongList.length}개의 노래 검색결과가 있습니다.`,
+        });
       })
       .catch((error) => {
         console.group('멜론 검색 에러');
         console.error(error);
         console.groupEnd();
+
+        notification.error({
+          message: '멜론 검색 에러',
+          // 주의: 유저 친화적인 에러 메세지는 아닙니다.
+          description: JSON.stringify(error),
+        });
       });
   };
 
@@ -62,14 +74,37 @@ function MelonSearch() {
         onChange={handleChange}
         onPressEnter={handlePressEnter}
       />
-      {songList.map((song) => {
+      <List
+        bordered={false}
+        dataSource={songList}
+        renderItem={(song) => {
+          return (
+            <List.Item>
+              <List.Item.Meta avatar={<Avatar src={song.ALBUMIMG} />} />
+              <Typography.Text
+                onClick={() => {
+                  console.log(`clicked ${JSON.stringify(song)}`);
+                }}
+              >
+                <a
+                  href={`https://www.melon.com/song/detail.htm?songId=${song.SONGID}`}
+                  target={'_blank'}
+                >
+                  {song.SONGNAME}
+                </a>
+              </Typography.Text>
+            </List.Item>
+          );
+        }}
+      />
+      {/* {songList.map((song) => {
         return (
-          <div>
+          <div key={song.SONGID}>
             <img src={song.ALBUMIMG} />
             {song.SONGNAME} by {song.ARTISTNAME}
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }
