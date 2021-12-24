@@ -1,0 +1,23 @@
+.player-wrap {
+  display: flex;
+}
+
+.song-list {
+  margin: 0;
+  padding: 0;
+  height: calc(100vh - 248px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.song-list .song {
+  border: 1px solid #eee;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.song-list .song img {
+}
+
+.song-player {
+}
