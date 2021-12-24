@@ -1,8 +1,12 @@
-import Counter from "Counter";
+import PageAbout from "pages/PageAbout";
+import PageCounter from "pages/PageCounter";
 
 function App() {
   return (
-    <Counter initial={10} />
+    <>
+      <PageAbout />
+      <PageCounter />
+    </>
   );
 }
 
