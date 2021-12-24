@@ -1,0 +1,30 @@
+.numbers {
+  padding: 0;
+  margin: 0;
+}
+
+.numbers li {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  line-height: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.5rem;
+  user-select: none;
+}
+
+.numbers li.group1 {
+  background-color: #fac401;
+}
+.numbers li.group2 {
+  background-color: #ff7370;
+}
+.numbers li.group3 {
+  background-color: #a7a7a8;
+}
+.numbers li.group4 {
+  background-color: #ff7370;
+}
