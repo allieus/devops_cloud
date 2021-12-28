@@ -21,6 +21,9 @@ function PageProfile() {
               key={profile.unique_id}
               name={profile.name}
               profileImage={`${process.env.PUBLIC_URL}/profile-images/${profile.unique_id}.jpg`}
+              role={profile.role}
+              mbti={profile.mbti}
+              instagramUrl={profile.instagram_url}
             >
               <ProfileNav
                 uniqueIdList={uniqueIdList}

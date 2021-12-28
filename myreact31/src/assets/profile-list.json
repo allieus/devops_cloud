@@ -1,9 +1,51 @@
 [
-  { "unique_id": "bts-jin", "name": "진" },
-  { "unique_id": "bts-suga", "name": "슈가" },
-  { "unique_id": "bts-j-hope", "name": "제이홉" },
-  { "unique_id": "bts-rm", "name": "RM" },
-  { "unique_id": "bts-jimin", "name": "지민" },
-  { "unique_id": "bts-v", "name": "뷔" },
-  { "unique_id": "bts-jungkook", "name": "정국" }
+  {
+    "unique_id": "bts-jin",
+    "name": "진",
+    "role": "서브보컬",
+    "mbti": "INFP",
+    "instagram_url": "https://instagram.com/jin"
+  },
+  {
+    "unique_id": "bts-suga",
+    "name": "슈가",
+    "role": "리드래퍼",
+    "mbti": "INTP",
+    "instagram_url": "https://instagram.com/agustd"
+  },
+  {
+    "unique_id": "bts-j-hope",
+    "name": "제이홉",
+    "role": "메인댄서, 서브래퍼",
+    "mbti": "ESFJ",
+    "instagram_url": "https://instagram.com/uarmyhope"
+  },
+  {
+    "unique_id": "bts-rm",
+    "name": "RM",
+    "role": "리더, 메인래퍼",
+    "mbti": "ENFP",
+    "instagram_url": "https://instagram.com/rkive"
+  },
+  {
+    "unique_id": "bts-jimin",
+    "name": "지민",
+    "role": "메인댄서, 리드보컬",
+    "mbti": "ENFJ",
+    "instagram_url": "https://instagram.com/j.m"
+  },
+  {
+    "unique_id": "bts-v",
+    "name": "뷔",
+    "role": "서브보컬, 리드댄서",
+    "mbti": "INFP-T",
+    "instagram_url": "https://instagram.com/thv"
+  },
+  {
+    "unique_id": "bts-jungkook",
+    "name": "정국",
+    "role": "메인보컬, 리드댄서, 서브래퍼",
+    "mbti": "ISFP",
+    "instagram_url": "https://instagram.com/abcdefghi__lmnopqrstuvwxyz/"
+  }
 ]
