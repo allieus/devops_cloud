@@ -20,7 +20,7 @@ function PageProfile() {
             <ProfileCard
               key={profile.unique_id}
               name={profile.name}
-              profileImage={`${process.env.PUBLIC_URL}/profile-images/${profile.unique_id}.jpg`}
+              profileImage={profile.profile_image_url}
               role={profile.role}
               mbti={profile.mbti}
               instagramUrl={profile.instagram_url}

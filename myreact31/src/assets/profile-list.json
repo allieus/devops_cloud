@@ -4,48 +4,55 @@
     "name": "진",
     "role": "서브보컬",
     "mbti": "INFP",
-    "instagram_url": "https://instagram.com/jin"
+    "instagram_url": "https://instagram.com/jin",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-jin.jpg"
   },
   {
     "unique_id": "bts-suga",
     "name": "슈가",
     "role": "리드래퍼",
     "mbti": "INTP",
-    "instagram_url": "https://instagram.com/agustd"
+    "instagram_url": "https://instagram.com/agustd",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-suga.jpg"
   },
   {
     "unique_id": "bts-j-hope",
     "name": "제이홉",
     "role": "메인댄서, 서브래퍼",
     "mbti": "ESFJ",
-    "instagram_url": "https://instagram.com/uarmyhope"
+    "instagram_url": "https://instagram.com/uarmyhope",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-j-hope.jpg"
   },
   {
     "unique_id": "bts-rm",
     "name": "RM",
     "role": "리더, 메인래퍼",
     "mbti": "ENFP",
-    "instagram_url": "https://instagram.com/rkive"
+    "instagram_url": "https://instagram.com/rkive",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-rm.jpg"
   },
   {
     "unique_id": "bts-jimin",
     "name": "지민",
     "role": "메인댄서, 리드보컬",
     "mbti": "ENFJ",
-    "instagram_url": "https://instagram.com/j.m"
+    "instagram_url": "https://instagram.com/j.m",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-jimin.jpg"
   },
   {
     "unique_id": "bts-v",
     "name": "뷔",
     "role": "서브보컬, 리드댄서",
     "mbti": "INFP-T",
-    "instagram_url": "https://instagram.com/thv"
+    "instagram_url": "https://instagram.com/thv",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-v.jpg"
   },
   {
     "unique_id": "bts-jungkook",
     "name": "정국",
     "role": "메인보컬, 리드댄서, 서브래퍼",
     "mbti": "ISFP",
-    "instagram_url": "https://instagram.com/abcdefghi__lmnopqrstuvwxyz/"
+    "instagram_url": "https://instagram.com/abcdefghi__lmnopqrstuvwxyz/",
+    "profile_image_url": "https://classdevopscloud.blob.core.windows.net/data/bts-jungkook.jpg"
   }
 ]
