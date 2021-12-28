@@ -1,0 +1,9 @@
+[
+  { "unique_id": "bts-jin", "name": "진" },
+  { "unique_id": "bts-suga", "name": "슈가" },
+  { "unique_id": "bts-j-hope", "name": "제이홉" },
+  { "unique_id": "bts-rm", "name": "RM" },
+  { "unique_id": "bts-jimin", "name": "지민" },
+  { "unique_id": "bts-v", "name": "뷔" },
+  { "unique_id": "bts-jungkook", "name": "정국" }
+]
