@@ -1,5 +1,6 @@
 .page-profile {
   background-color: lightpink;
+  min-height: 100vh;
 }
 
 .page-profile .profile-list {

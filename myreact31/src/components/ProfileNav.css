@@ -3,4 +3,16 @@
 
 .profile-nav ul li {
   cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: red;
+  overflow: hidden;
+  margin-right: 1em;
+  color: red;
+}
+
+.profile-nav ul li.selected {
+  font-weight: bold;
 }

@@ -9,9 +9,13 @@ function ProfileNav({
     <div className="profile-nav">
       <ul>
         {uniqueIdList.map((unique_id) => (
-          <li onClick={() => setSelectedProfileUniqueId(unique_id)}>
+          <li
+            className={`${
+              selectedProfileUniqueId === unique_id ? 'selected' : ''
+            }`}
+            onClick={() => setSelectedProfileUniqueId(unique_id)}
+          >
             {unique_id}
-            {selectedProfileUniqueId === unique_id && '⬅ 선택됨'}
           </li>
         ))}
       </ul>
