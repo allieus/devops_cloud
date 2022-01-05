@@ -1,9 +1,10 @@
+import PageCounter from 'pages/PageCounter';
 import './App.css';
 
 function App() {
   return (
     <div>
-      Hello React
+      <PageCounter />
     </div>
   );
 }
