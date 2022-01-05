@@ -1,12 +1,14 @@
 // import PageCounter from 'pages/PageCounter';
-import PageTodoList from 'pages/PageTodoList';
+// import PageTodoList from 'pages/PageTodoList';
+import PageReviewList from 'pages/PageReviewList';
 import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className='app'>
       {/* <PageCounter /> */}
-      <PageTodoList />
+      {/* <PageTodoList /> */}
+      <PageReviewList />
     </div>
   );
 }
