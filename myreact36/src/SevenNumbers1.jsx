@@ -49,11 +49,30 @@ function SevenNumbers1({ title }) {
     }));
   };
 
+  const changeCircleColor = (circleIndex) => {
+    setState((prevState) => ({
+      ...prevState,
+      colors: prevState.colors.map(
+        (color) => `#${Math.round(Math.random() * 0xffffff).toString(16)}`,
+      ),
+    }));
+  };
+
+  const removeCircle = (circleIndex) => {};
+
   return (
     <div>
       {title && <h2>{title}</h2>}
-      {zip(state.numbers, state.colors).map(([number, color]) => (
-        <Circle number={number} backgroundColor={color} />
+      {zip(state.numbers, state.colors).map(([number, color], index) => (
+        <Circle
+          number={number}
+          backgroundColor={color}
+          onClick={() => changeCircleColor(index)}
+          onContextMenu={(e) => {
+            e.preventDefault();
+            removeCircle(index);
+          }}
+        />
       ))}
       <hr />
       <button onClick={generateNumbers}>GENERATE_NUMBERS</button>
