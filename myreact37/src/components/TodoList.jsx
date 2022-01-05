@@ -39,29 +39,11 @@ function TodoList() {
 
   return (
     <div className="todo-list">
-      <h2>Todo List</h2>
-
       <TodoForm
         fieldValues={fieldValues}
         handleChange={handleChange}
         handleSubmit={appendTodo}
       />
-      <hr />
-      {JSON.stringify(fieldValues)}
-
-      <button
-        className="bg-red-500 text-gray-100 cursor-pointer"
-        onClick={() => clearFieldValues()}
-      >
-        clear
-      </button>
-
-      {/* <input
-        type="text"
-        value={inputText}
-        onChange={changedInputText}
-        onKeyPress={appendInputText}
-      /> */}
 
       {todoList.map((todo, index) => (
         <Todo todo={todo} onClick={() => removeTodo(index)} />
