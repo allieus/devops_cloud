@@ -36,18 +36,24 @@ function ReviewList() {
   const saveReview = () => {
     // review는 데이터베이스에 저장하면 id를 할당해줍니다.
 
-    const { id: reviewId } = fieldValues;
+    let { id: reviewId } = fieldValues;
 
     // 새로운 리뷰 저장
     if (!reviewId) {
+      reviewId = new Date().getTime();
+      const createdReview = { ...fieldValues, id: reviewId };
+      setReviewList((prevReviewList) => [...prevReviewList, createdReview]);
     }
     // 기존 리뷰 수정
     else {
+      const editedReview = { ...fieldValues };
+      setReviewList((prevReviewList) =>
+        prevReviewList.map((review) => {
+          if (review.id === editedReview.id) return editedReview;
+          return review;
+        }),
+      );
     }
-
-    // const reviewId = new Date().getTime();
-    // const review = { ...fieldValues, id: reviewId };
-    // setReviewList((prevReviewList) => [...prevReviewList, review]);
 
     clearFieldValues();
     setIsShowReviewForm(false);
