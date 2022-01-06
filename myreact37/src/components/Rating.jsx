@@ -2,9 +2,9 @@ const range = (size) => [...Array(size).keys()];
 
 function Rating({ score }) {
   return (
-    <ul class="flex">
+    <ul className="flex">
       {range(5).map((index) => (
-        <li>{index < score ? <Filled /> : <Empty />}</li>
+        <li key={index}>{index < score ? <Filled /> : <Empty />}</li>
       ))}
     </ul>
   );
@@ -15,9 +15,9 @@ function Filled() {
     <svg
       aria-hidden="true"
       focusable="false"
-      data-prefix="fas"
-      data-icon="star"
-      class="w-4 text-yellow-500 mr-1"
+      dataprefix="fas"
+      dataicon="star"
+      className="w-4 text-yellow-500 mr-1"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
@@ -35,9 +35,9 @@ function Empty() {
     <svg
       aria-hidden="true"
       focusable="false"
-      data-prefix="far"
-      data-icon="star"
-      class="w-4 text-yellow-500"
+      dataprefix="far"
+      dataicon="star"
+      className="w-4 text-yellow-500"
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
