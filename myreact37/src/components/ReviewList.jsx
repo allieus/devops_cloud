@@ -43,6 +43,11 @@ function ReviewList() {
     setIsShowReviewForm(false);
   };
 
+  const deleteReview = (deletingReview) => {
+    console.log('Deleting', deletingReview);
+    // TODO: reviewList 배열 상탯값에서 deletingReview에 해당하는 리뷰를 제거
+  };
+
   return (
     <div>
       <h2 className="text-xl mb-2 border-b-2 border-orange-500">ReviewList</h2>
@@ -69,7 +74,12 @@ function ReviewList() {
         </div>
       )}
       {reviewList.map((review) => (
-        <Review review={review} />
+        <Review
+          key={review.id}
+          review={review}
+          handleEdit={() => console.log('Editing', review)}
+          handleDelete={() => deleteReview(review)}
+        />
       ))}
     </div>
   );
