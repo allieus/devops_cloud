@@ -25,27 +25,47 @@ const INITIAL_STATE = [
 
 function ReviewList() {
   const [reviewList, setReviewList] = useState(INITIAL_STATE);
-  const [fieldValues, handleChange, clearFieldValues] = useFieldValues({
-    content: '',
-    score: 5,
-  });
+  const [fieldValues, handleChange, clearFieldValues, setFieldValues] =
+    useFieldValues({
+      content: '',
+      score: 5,
+    });
   const [isShowReviewForm, setIsShowReviewForm] = useState(false);
 
-  // 새로운 리뷰 저장
+  // 새로운 리뷰 저장 + 기존 리뷰 수정
   const saveReview = () => {
     // review는 데이터베이스에 저장하면 id를 할당해줍니다.
 
-    const reviewId = new Date().getTime();
+    const { id: reviewId } = fieldValues;
 
-    const review = { ...fieldValues, id: reviewId };
-    setReviewList((prevReviewList) => [...prevReviewList, review]);
+    // 새로운 리뷰 저장
+    if (!reviewId) {
+    }
+    // 기존 리뷰 수정
+    else {
+    }
+
+    // const reviewId = new Date().getTime();
+    // const review = { ...fieldValues, id: reviewId };
+    // setReviewList((prevReviewList) => [...prevReviewList, review]);
+
     clearFieldValues();
     setIsShowReviewForm(false);
   };
 
+  const willEditReview = (editingReview) => {
+    console.log('willEditReview :', editingReview);
+    setFieldValues(editingReview);
+    setIsShowReviewForm(true);
+  };
+
   const deleteReview = (deletingReview) => {
-    console.log('Deleting', deletingReview);
     // TODO: reviewList 배열 상탯값에서 deletingReview에 해당하는 리뷰를 제거
+    setReviewList((prevReviewList) => {
+      return prevReviewList.filter(
+        ({ id: reviewId }) => reviewId !== deletingReview.id,
+      );
+    });
   };
 
   return (
@@ -77,7 +97,7 @@ function ReviewList() {
         <Review
           key={review.id}
           review={review}
-          handleEdit={() => console.log('Editing', review)}
+          handleEdit={() => willEditReview(review)}
           handleDelete={() => deleteReview(review)}
         />
       ))}
