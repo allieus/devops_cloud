@@ -25,29 +25,57 @@ const INITIAL_STATE = [
 
 function ReviewList() {
   const [reviewList, setReviewList] = useState(INITIAL_STATE);
-  const [fieldValues, handleChange, clearFieldValues] = useFieldValues({
-    content: '',
-    score: 5,
-  });
+  const [fieldValues, handleChange, clearFieldValues, setFieldValues] =
+    useFieldValues({
+      content: '',
+      score: 5,
+    });
   const [isShowReviewForm, setIsShowReviewForm] = useState(false);
 
-  const saveReview = () => {
-    // DB에 저장할 경우, DB에서 식별자(pk)를 제공해줍니다.
-    const randomId = `review-${new Date().getTime()}`;
+  const saveReview = (savingFieldValues) => {
+    let { id: reviewId } = savingFieldValues;
 
-    const review = { ...fieldValues, id: randomId };
-    setReviewList((prevReviewList) => [...prevReviewList, review]);
+    // 생성
+    if (!reviewId) {
+      // DB에 저장할 경우, DB에서 식별자(pk)를 제공해줍니다.
+      reviewId = `review-${new Date().getTime()}`;
+
+      const savingReview = { ...savingFieldValues, id: reviewId };
+      setReviewList((prevReviewList) => [...prevReviewList, savingReview]);
+    }
+    // 수정
+    else {
+      const savingReview = { ...savingFieldValues };
+
+      setReviewList((prevReviewList) =>
+        prevReviewList.map((review) => {
+          if (review.id === reviewId) {
+            return savingReview;
+          }
+          return review;
+        }),
+      );
+    }
+
     clearFieldValues();
     setIsShowReviewForm(false);
   };
 
   const deleteReview = (deletingReview) => {
+    // TODO: 유저에게 확인 받기
+
     // review에 유일한 식별자 id 속성이 있습니다.
     setReviewList((prevReviewList) =>
       prevReviewList.filter((review) => {
         return review.id !== deletingReview.id;
       }),
     );
+  };
+
+  const editReview = (editingReview) => {
+    console.log('editing', editingReview);
+    setFieldValues(editingReview);
+    setIsShowReviewForm(true);
   };
 
   return (
@@ -78,7 +106,11 @@ function ReviewList() {
         </div>
       )}
       {reviewList.map((review) => (
-        <Review review={review} handleDelete={deleteReview} />
+        <Review
+          review={review}
+          handleEdit={() => editReview(review)}
+          handleDelete={() => deleteReview(review)}
+        />
       ))}
     </div>
   );
