@@ -2,6 +2,7 @@
 // import PageTodoList from 'pages/PageTodoList';
 import TopNav from 'components/TopNav';
 import PageCounter from 'pages/PageCounter';
+import PageNotFound from 'pages/PageNotFound';
 import PageReviewList from 'pages/PageReviewList';
 import PageTodoList from 'pages/PageTodoList';
 import { Routes, Route } from 'react-router-dom';
@@ -17,6 +18,7 @@ function App() {
         <Route path="/counter" element={<PageCounter />} />
         <Route path="/reviews" element={<PageReviewList />} />
         <Route path="/todos" element={<PageTodoList />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
