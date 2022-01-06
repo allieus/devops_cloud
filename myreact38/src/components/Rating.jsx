@@ -1,14 +1,18 @@
 // score : 정수 (0~5)
 
+import { Fragment } from 'react';
+
 const range = (size) => [...Array(size).keys()];
 
 function Rating({ score, type }) {
   return (
     <div>
-      <ul class="flex justify-center">
-        {range(5).map((index) =>
-          index < score ? <FilledStar /> : <EmptyStar />,
-        )}
+      <ul className="flex justify-center">
+        {range(5).map((index) => (
+          <Fragment key={index}>
+            {index < score ? <FilledStar /> : <EmptyStar />}
+          </Fragment>
+        ))}
       </ul>
     </div>
   );
@@ -16,10 +20,10 @@ function Rating({ score, type }) {
 
 const FilledStar = () => (
   <svg
-    ariaHidden="true"
+    aria-hidden="true"
     focusable="false"
-    dataPrefix="fas"
-    dataIcon="star"
+    dataprefix="fas"
+    dataicon="star"
     className="w-4 text-yellow-500 mr-1"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -34,10 +38,10 @@ const FilledStar = () => (
 
 const EmptyStar = () => (
   <svg
-    ariaHidden="true"
+    aria-hidden="true"
     focusable="false"
-    dataPrefix="far"
-    dataIcon="star"
+    dataprefix="far"
+    dataicon="star"
     className="w-4 text-yellow-500 mr-1"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
